@@ -1,0 +1,534 @@
+/* SELECTOR UNIVERSAL */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -----------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* BODY */
+
+body{
+
+  font-family: 'Montserrat',sans-serif;
+  background: linear-gradient(to bottom, #07c0cd, #0099a0, #008092, #07c0cd);
+  min-height: 100vh;
+
+}
+
+/* -----------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* CABECERA */
+
+.cabecera {
+
+  padding: 32px 0 10px;
+  text-align: center;
+  margin-top: 0;
+}
+
+/* CONTENEDOR CABECERA */
+
+.contenedor-cabecera {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+}
+
+/* TITULO */
+
+.titulo-logo {
+
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* MENU DE NAVEGACION */
+
+.menu-navegacion {
+
+  margin-top: 20px;
+}
+
+.menu-navegacion ul {
+
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.menu-navegacion a {
+
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  position:relative;
+  padding-bottom: 4px;
+
+}
+
+.menu-navegacion a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.menu-navegacion a:hover::after {
+  width: 100%;
+}
+
+
+/* -----------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* MAIN */
+
+main {
+
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  padding: 48px 16px;
+  
+}
+
+/* PERFIL Y DESCRIPCION */
+
+.presentacion figure {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+
+}
+
+.presentacion h1 {
+
+  font-size: 50px;
+  margin: 0;
+  color: white;
+  margin-bottom: 16px;
+
+}
+
+.presentacion h2 {
+  font-size: 30px;
+  color: white;
+  margin: 0;
+  margin-bottom: 25px;
+  
+}
+
+.presentacion p {
+  max-width: 600px;
+  font-size: 16px;
+  color: white;
+  margin-top: 16px;
+  line-height: 2;
+  word-spacing: 5px;
+}
+
+
+/* REDES SOCIALES */
+
+.menu-rs ul {
+
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 70px;
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+}
+
+.menu-rs a i {
+
+  font-size: 30px;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-rs a:hover i {
+
+  transform: scale(1.2);
+  color: #4db5ff; 
+}
+
+.menu-rs {
+  margin-top: 50px;
+}
+
+
+/* -----------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* SOBRE MI */
+
+.sobre-mi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  
+}
+
+.caja-blanca {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.caja-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6f7f5;
+}
+
+.caja-imagen img {
+  max-height: 300px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.caja-texto {
+  flex: 2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.caja-texto h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  color: #c90123;
+}
+
+.caja-texto p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* -----------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* TRABAJOS */
+
+.proyectos{
+  padding: 32px;
+}
+
+/* CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: end;
+}
+
+.card {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.card:not(.is-open):hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* CARD FRONTAL */
+
+.card-frontal img {
+  width: 100%;
+  display: block;
+}
+
+.card-frontal figcaption {
+  padding: .75rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* CARD TRASERA */
+
+.card-trasera {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  max-height: 0;
+  padding: 0 1rem;
+  overflow: hidden;
+  background: #f8f8f8;
+  transition: max-height .4s ease, padding .4s ease;
+}
+
+.card.is-open .card-trasera {
+  max-height: 200px;
+  padding: 1rem;
+}
+
+/* CARD ABIERTA */
+
+.card-trasera .boton-preview {
+  display: inline-block;
+  margin-top: .5rem;
+  padding: .5rem 1rem;
+  background: #007acc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color .3s ease;
+}
+
+.card-trasera .boton-preview:hover {
+  background-color: #005fa3;
+}
+
+
+/* -----------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* CAJA BLANCA FORMULARIO */
+
+.caja-blanca{
+
+  max-width: 900px;     
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;  
+  display: flex; 
+}
+
+/* CAJA IZQUIERDA IMAGENES FORMULARIO */
+
+.caja-imagen {
+
+      flex: 1;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      margin-left: 40px;
+}
+
+/* CAJA DERECHA IMAGENES FORMULARIO */
+
+.caja-derecha{
+
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #fff;
+
+}
+
+.caja-imagen,
+.caja-derecha {
+  width: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* FORMULARIO */
+
+.formulario{
+
+  background: #fff;
+  padding: 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%;
+
+}
+
+form input, form textarea, form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  background: #007483;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #0297ab;
+}
+
+/* -----------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* PIE DE PAGINA*/
+
+.pie-pagina {
+  background-color: #009aa5;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.caja-footer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.rs-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 25px;
+  position: relative;
+}
+
+.rs-footer::before,
+.rs-footer::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #fff;
+  max-width: 200px;
+}
+
+.rs-footer li {
+  position: relative;
+}
+
+.rs-footer a {
+  font-size: 22px;
+  color: white;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.rs-footer a:hover {
+  color: #4db5ff;
+  transform: scale(1.2);
+}
+
+.proteccion-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.proteccion-footer img {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.proteccion-footer a {
+  color: #fff;
+  font-size: 13px;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+.proteccion-footer a:hover {
+  color: #4db5ff;
+}
+
+
+/* RESPONSIVE */
+
+
+@media (max-width: 768px) {
+  .caja-blanca {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .caja-imagen,
+  .caja-derecha {
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .formulario {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  form input,
+  form textarea,
+  form button {
+    font-size: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
